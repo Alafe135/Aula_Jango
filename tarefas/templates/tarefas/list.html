@@ -8,7 +8,7 @@
   <h1>Lista de Tarefas</h1>
   <div class="row barra">
     <div class="col-sm-2">
-      <a id="add-button" href="">
+      <a id="add-button" href="novaTarefa/">
         <div class="add-div">
           <i class="fa fa-plus"></i>Adicionar Tarefa
         </div>
@@ -27,16 +27,17 @@
       </form>
 
     </div>
+    {% for tarefa in tarefas %}
     <div class="row item">
       <div class="col-sm-10">
-        <span><a class="link" href="">Limpar a Casa</a></span>
+        <span><a class="link" href="/tarefa/{{tarefa.id}}">{{tarefa.titulo}}</a></span>
       </div>
       <div class="col-sm-2 icones">
-        <a href=""><span><i class="fa fa-edit"></i></span></a>
-        <a href="" class="delete-btn"><span><i class="fa fa-trash"></i></span></a>
+        <a href="edit/{{tarefa.id}}"><span><i class="fa fa-edit"></i></span></a>
+        <a href="delete/{{tarefa.id}}" class="delete-btn"><span><i class="fa fa-trash"></i></span></a>
       </div>
     </div>
-
+    {% endfor %}
   </div>
 
-{% endblock%}
+{% endblock %}

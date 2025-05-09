@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title%} Editando a tarefa {%endblock%}
+
+{% block content%}
+
+<div class="list-div">
+    <h1>Editando a Tarefa '{{tarefa.titulo}}'</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+
+        <input type="submit" class="btn btn-success"
+        volue="Editar Tarefa">
+    </form>
+</div>
+{% endblock%}
