@@ -28,7 +28,8 @@ def novaTarefa(request):
     
 def editTarefa(request, id):
     tarefa = get_object_or_404(Tarefas, pk=id)
-    form = Tarefaform(request.POST, instance=tarefa)
+    form = Tarefaform(instance=tarefa)
+
     if (request.method == 'POST'):
         form = Tarefaform(request.POST, instance=tarefa)
         if (form.is_valid()):
